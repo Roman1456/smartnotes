@@ -22,13 +22,17 @@ qest_btn3 = QPushButton("Додати до замітки")
 qest_btn4 = QPushButton("Відкріпити від замітки")
 qest_btn5 =QPushButton("Шукати замітки потегу")
 
+mine_line1 = QVBoxLayout()
 
-
-h1 = QVBoxLayout()
+h1 = QHBoxLayout()
 
 
 h2 = QVBoxLayout()
 h2.addWidget(qest_lbl)
+h2.addStretch(1)
+mine_line1.addLayout(h2)
+mine_line1.addWidget(qest_btn)
+
 
 main_line = QHBoxLayout()
 

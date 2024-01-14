@@ -25,7 +25,7 @@ qest_btn5 =QPushButton("Шукати замітки потегу")
 
 
 h1 = QVBoxLayout()
-h1.addWidget()
+
 
 h2 = QVBoxLayout()
 h2.addWidget(qest_lbl)

@@ -9,7 +9,7 @@ qest_lbl = QLabel("Список заміток")
 qest_lbl1 = QLabel("Список тегів")
 
 answer_list = QListWidget()
-answer_list1 = QListWidget
+answer_list1 = QListWidget()
 
 answer_text = QTextEdit()
 
@@ -22,40 +22,23 @@ qest_btn3 = QPushButton("Додати до замітки")
 qest_btn4 = QPushButton("Відкріпити від замітки")
 qest_btn5 =QPushButton("Шукати замітки потегу")
 
-mine_line1 = QVBoxLayout()
+mine_line = QHBoxLayout()
 
-h1 = QHBoxLayout()
+mine_line.addWidget(answer_text)
 
-
-h2 = QVBoxLayout()
-h2.addWidget(qest_lbl)
-h2.addStretch(1)
-mine_line1.addLayout(h2)
-mine_line1.addWidget(qest_btn)
-
-
-main_line = QHBoxLayout()
-
+h1 = QVBoxLayout()
+h1.addWidget(qest_lbl)
+h1.addWidget(answer_list)
+h1.addWidget(qest_btn)
+h1.addWidget(qest_btn1)
+h1.addWidget(qest_btn2)
+h1.addStretch(1)
+mine_line.addLayout(h1)
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+window.setLayout(mine_line)
 window.show()
 app.exec()

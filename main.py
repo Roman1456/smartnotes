@@ -27,11 +27,14 @@ mine_line = QHBoxLayout()
 
 mine_line.addWidget(answer_text)
 
+h2 = QHBoxLayout
 h1 = QVBoxLayout()
 h1.addWidget(qest_lbl)
 h1.addWidget(answer_list)
 h1.addWidget(qest_btn)
-h1.addWidget(qest_btn1)
+
+h2.addWidget(qest_btn1)
+
 h1.addWidget(qest_btn2)
 
 

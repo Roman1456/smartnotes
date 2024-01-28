@@ -78,6 +78,9 @@ def change_note():
 
 qest_btn2.clicked.connect(change_note)
 
+
+
+
 def add_note():
     res, ok =QInputDialog.getText(window, "Ведення" , "Ведіть назву замітку")
     if ok:

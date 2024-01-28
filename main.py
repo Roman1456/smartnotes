@@ -78,8 +78,12 @@ def change_note():
 
 qest_btn2.clicked.connect(change_note)
 
+def delet_note():
+    name = answer_list.selectedItems()[0].text()
+    notes.pop(name)
+    write_data()
 
-
+qest_btn1.clicked.connect(delet_note)
 
 def add_note():
     res, ok =QInputDialog.getText(window, "Ведення" , "Ведіть назву замітку")

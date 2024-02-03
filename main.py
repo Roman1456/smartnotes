@@ -68,6 +68,9 @@ answer_list.addItems(notes)
 def vmist_note():
     name = answer_list.selectedItems()[0].text()
     answer_text.setText(notes[name]["Вміст"])
+    answer_list1.clear()
+    answer_list1.addItems(notes[name]["Теги"])
+
 
 answer_list.itemClicked.connect(vmist_note)
 
@@ -78,10 +81,16 @@ def change_note():
 
 qest_btn2.clicked.connect(change_note)
 
+
+
 def delet_note():
-    name = answer_list.selectedItems()[0].text()
-    notes.pop(name)
-    write_data()
+    res, ok = QInputDialog.getText(window, "Ведення", "Ведіть назву замітку")
+    if ok:
+        notes.pop(res)
+        answer_list.clear()
+        answer_list.addItems(notes)
+
+        write_data()
 
 qest_btn1.clicked.connect(delet_note)
 
@@ -94,6 +103,25 @@ def add_note():
         }
         write_data()
 
+def add_tag():
+    name = answer_list.selectedItems()[0].text()
+    tag = answer_edit.text()
+    notes[name]["Теги"].append(tag)
+    answer_list1.clear()
+    answer_list1.addItems(notes[name]["Теги"])
+    write_data()
+
+qest_btn3.clicked.connect(add_tag)
+
+def delet_tag():
+    name_note = answer_list.selectedItems()[0].text()
+    name_tag = answer_list1.selectedItems()[0].text()
+    notes[name_note]["Теги"].remove(name_tag)
+    write_data()
+
+qest_btn4.clicked.connect(delet_tag)
+
 qest_btn.clicked.connect(add_note)
+qest_btn1.clicked.connect(delet_note)
 window.show()
 app.exec()

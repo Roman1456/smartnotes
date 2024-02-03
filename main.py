@@ -84,6 +84,7 @@ qest_btn2.clicked.connect(change_note)
 
 
 def delet_note():
+<<<<<<< Updated upstream
     res, ok = QInputDialog.getText(window, "Ведення", "Ведіть назву замітку")
     if ok:
         notes.pop(res)
@@ -91,6 +92,11 @@ def delet_note():
         answer_list.addItems(notes)
 
         write_data()
+=======
+    name = answer_list.selectedItems()[0].text()
+    notes.pop[name].answer_text.toPlainText()
+    write_data()
+>>>>>>> Stashed changes
 
 qest_btn1.clicked.connect(delet_note)
 

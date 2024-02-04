@@ -10,6 +10,46 @@ app.setStyleSheet("""
     {
     background-color: #0000ff;
     }
+    
+    
+    
+    QLabel
+    {
+        background-color: #e0f542;
+        font-size: 18px;
+        color: blue;
+        border-style: double;
+        border-width: 5px;
+        border-color: orange;
+        border-radius: 12px;
+    }
+        
+    QListWidget
+    {
+        background-color: #fbffdb;
+        border-style: double;
+        border-width: 5px;
+        border-color: orange;
+        border-radius: 12px;
+    }
+        
+   QTextEdit
+   {
+        background-color: #fbffdb;
+        border-style: double;
+        border-width: 5px;
+        border-color: orange;
+        border-radius: 12px;
+   }
+
+    QLineEdit
+    {
+        background-color: #fbffdb;
+        border-style: double;
+        border-width: 5px;
+        border-color: orange;
+        border-radius: 12px;
+    }
 
     QPushButton 
     {  
@@ -24,11 +64,9 @@ app.setStyleSheet("""
         min-width: 100;
         margin: 5px;
     }
+    
+    
 """)
-
-
-
-
 
 notes={}
 window = QWidget()

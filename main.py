@@ -4,25 +4,28 @@ from PyQt5.QtWidgets import *
 
 app = QApplication([])
 
+
 app.setStyleSheet("""
+    QWidget
+    {
+    background-color: #0000ff;
+    }
+
     QPushButton 
     {  
         background-color: #e0f542;
-        font-size: 14px;
+        font-size: 18px;
         color: blue;
         border-style: double;
         border-width: 5px;
         border-color: orange;
-        border-radius: 7px;
+        border-radius: 12px;
         min-height: 20px;
         min-width: 100;
         margin: 5px;
     }
-    QWidget
-    {
-        ;
-    }
 """)
+
 
 
 
@@ -30,6 +33,7 @@ app.setStyleSheet("""
 notes={}
 window = QWidget()
 window.resize(700,500)
+
 
 qest_lbl = QLabel("Список заміток")
 qest_lbl1 = QLabel("Список тегів")
@@ -43,6 +47,8 @@ answer_edit = QLineEdit()
 
 qest_btn = QPushButton("Створити замітку")
 qest_btn1 = QPushButton("Видалити зімітку")
+
+
 qest_btn2 = QPushButton("Зберегти замітку")
 
 qest_btn3 = QPushButton("Додати до замітки")
@@ -114,11 +120,6 @@ def delet_note():
         answer_list.addItems(notes)
 
         write_data()
-
-    name = answer_list.selectedItems()[0].text()
-    notes.pop[name].answer_text.toPlainText()
-    write_data()
-
 
 qest_btn1.clicked.connect(delet_note)
 

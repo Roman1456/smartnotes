@@ -4,9 +4,74 @@ from PyQt5.QtWidgets import *
 
 app = QApplication([])
 
+
+app.setStyleSheet("""
+    QWidget
+    {
+    background-color: #0000ff;
+    }
+    
+    
+    
+    QLabel
+    {
+        background-color: #e0f542;
+        font-size: 18px;
+        color: blue;
+        border-style: double;
+        border-width: 5px;
+        border-color: orange;
+        border-radius: 12px;
+    }
+        
+    QListWidget
+    {
+        background-color: #fbffdb;
+        border-style: double;
+        border-width: 5px;
+        border-color: orange;
+        border-radius: 12px;
+    }
+        
+   QTextEdit
+   {
+        background-color: #fbffdb;
+        border-style: double;
+        border-width: 5px;
+        border-color: orange;
+        border-radius: 12px;
+   }
+
+    QLineEdit
+    {
+        background-color: #fbffdb;
+        border-style: double;
+        border-width: 5px;
+        border-color: orange;
+        border-radius: 12px;
+    }
+
+    QPushButton 
+    {  
+        background-color: #e0f542;
+        font-size: 18px;
+        color: blue;
+        border-style: double;
+        border-width: 5px;
+        border-color: orange;
+        border-radius: 12px;
+        min-height: 20px;
+        min-width: 100;
+        margin: 5px;
+    }
+    
+    
+""")
+
 notes={}
 window = QWidget()
 window.resize(700,500)
+
 
 qest_lbl = QLabel("Список заміток")
 qest_lbl1 = QLabel("Список тегів")
@@ -20,6 +85,8 @@ answer_edit = QLineEdit()
 
 qest_btn = QPushButton("Створити замітку")
 qest_btn1 = QPushButton("Видалити зімітку")
+
+
 qest_btn2 = QPushButton("Зберегти замітку")
 
 qest_btn3 = QPushButton("Додати до замітки")
@@ -101,6 +168,7 @@ def add_note():
             "Вміст": "",
             "Теги": []
         }
+        answer_list.addItems(notes)
         write_data()
 
 def add_tag():
@@ -120,6 +188,7 @@ def delet_tag():
     write_data()
 
 qest_btn4.clicked.connect(delet_tag)
+
 
 qest_btn.clicked.connect(add_note)
 qest_btn1.clicked.connect(delet_note)

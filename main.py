@@ -189,8 +189,30 @@ def delet_tag():
 
 qest_btn4.clicked.connect(delet_tag)
 
+def search_tag():
+    buttun_text =qest_btn5.text()
+    tag = answer_edit.text()
+    if buttun_text == "Шукати замітки потегу":
+        apply_tag_search(tag)
+    if buttun_text == "Скинути пошук":
+        print("Функція для скиданя пошуку")
+
+    
+
+def apply_tag_search(tag):
+    notes_filtered = {}
+    for note,value in notes.items():
+        if tag in value["Теги"]:
+            notes_filtered[note] = value
+    qest_btn5.setText("Скинути пошук")
+    answer_list.clear()
+    answer_list1.clear()
+    answer_list.addItems(notes_filtered)
+
+qest_btn5.clicked.connect(search_tag)
 
 qest_btn.clicked.connect(add_note)
 qest_btn1.clicked.connect(delet_note)
 window.show()
 app.exec()
+

@@ -168,6 +168,7 @@ def add_note():
             "Вміст": "",
             "Теги": []
         }
+        answer_list.addItems(notes)
         write_data()
 
 def add_tag():

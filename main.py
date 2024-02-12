@@ -197,7 +197,9 @@ def search_tag():
     if buttun_text == "Скинути пошук":
         print("Функція для скиданя пошуку")
 
-    
+        notes.clear()
+        
+        qest_btn5.setText("Шукати замітки потегу")
 
 def apply_tag_search(tag):
     notes_filtered = {}

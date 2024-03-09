@@ -12,7 +12,6 @@ app.setStyleSheet("""
     }
     
     
-    
     QLabel
     {
         background-color: #e0f542;
